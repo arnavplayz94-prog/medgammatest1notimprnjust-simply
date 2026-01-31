@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medgamma - AI-Powered Medicine R&D Platform">
+    <title>Medgamma | AI Medicine R&D Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"><span class="material-icons-outlined">biotech</span></div>
+                <span class="logo-text">Medgamma</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item active" data-section="dashboard"><span
+                        class="material-icons-outlined">dashboard</span><span>Dashboard</span></li>
+                <li class="nav-item" data-section="molecules"><span
+                        class="material-icons-outlined">science</span><span>Molecule Analysis</span></li>
+                <li class="nav-item" data-section="ai-discovery"><span
+                        class="material-icons-outlined">psychology</span><span>AI Discovery</span></li>
+                <li class="nav-item" data-section="projects"><span
+                        class="material-icons-outlined">folder_open</span><span>Projects</span></li>
+                <li class="nav-item" data-section="trials"><span
+                        class="material-icons-outlined">clinical_notes</span><span>Clinical Trials</span></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar"><span class="material-icons-outlined">person</span></div>
+                <div class="user-info"><span class="user-name">Dr. Research</span><span class="user-role">Lead
+                        Scientist</span></div>
+            </div>
+        </div>
+    </aside>
+    <main class="main-content">
+        <header class="top-header">
+            <div class="search-container">
+                <span class="material-icons-outlined">search</span>
+                <input type="text" placeholder="Search molecules, projects..." id="globalSearch">
+            </div>
+            <div class="header-right">
+                <button class="header-btn"><span class="material-icons-outlined">notifications</span><span
+                        class="badge">3</span></button>
+            </div>
+        </header>
+        <section id="dashboard" class="content-section active">
+            <div class="section-header">
+                <h1>Research Dashboard</h1>
+                <p class="subtitle">Your R&D overview</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue"><span class="material-icons-outlined">science</span></div>
+                    <div class="stat-content"><span class="stat-value">1,247</span><span class="stat-label">Molecules
+                            Analyzed</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><span class="material-icons-outlined">psychology</span></div>
+                    <div class="stat-content"><span class="stat-value">89</span><span class="stat-label">AI
+                            Predictions</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><span class="material-icons-outlined">check_circle</span></div>
+                    <div class="stat-content"><span class="stat-value">23</span><span class="stat-label">Active
+                            Trials</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><span class="material-icons-outlined">verified</span></div>
+                    <div class="stat-content"><span class="stat-value">7</span><span class="stat-label">FDA
+                            Approvals</span></div>
+                </div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card ai-status">
+                    <div class="card-header">
+                        <h3>AI Model Status</h3><span class="status-badge online">Online</span>
+                    </div>
+                    <div class="ai-metrics">
+                        <div class="metric"><span>Accuracy</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:94%"></div>
+                            </div><span>94.7%</span>
+                        </div>
+                    </div><button class="primary-btn">Run Analysis</button>
+                </div>
+                <div class="dashboard-card discoveries">
+                    <div class="card-header">
+                        <h3>Recent Discoveries</h3>
+                    </div>
+                    <div class="discovery-item">
+                        <h4>Compound MG-4721</h4>
+                        <p>High binding affinity for SARS-CoV-2</p><span class="score">98.2%</span>
+                    </div>
+                    <div class="discovery-item">
+                        <h4>Drug DC-892</h4>
+                        <p>Passed toxicity screening</p><span class="score">87.5%</span>
+                    </div>
+                </div>
+                <div class="dashboard-card quick-actions">
+                    <div class="card-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="actions-grid"><button class="action-btn"><span
+                                class="material-icons-outlined">upload_file</span>Upload Molecule</button><button
+                            class="action-btn"><span class="material-icons-outlined">play_circle</span>Run AI
+                            Model</button><button class="action-btn"><span
+                                class="material-icons-outlined">analytics</span>Generate Report</button></div>
+                </div>
+            </div>
+        </section>
+        <section id="molecules" class="content-section">
+            <div class="section-header">
+                <h1>Molecule Analysis</h1>
+                <p class="subtitle">Analyze molecular compounds</p>
+            </div>
+            <div class="molecule-workspace">
+                <div class="input-panel">
+                    <h3>Input Compound</h3><textarea id="smilesInput"
+                        placeholder="Enter SMILES notation..."></textarea><button class="primary-btn"
+                        id="analyzeBtn"><span class="material-icons-outlined">psychology</span>Analyze with AI</button>
+                </div>
+                <div class="viz-panel">
+                    <h3>3D Visualization</h3>
+                    <div class="molecule-3d" id="moleculeViewer">
+                        <div class="placeholder-molecule"></div>
+                        <p>Enter molecule to visualize</p>
+                    </div>
+                </div>
+                <div class="results-panel">
+                    <h3>AI Results</h3>
+                    <div id="analysisResults">
+                        <p>Run analysis to see predictions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ai-discovery" class="content-section">
+            <div class="section-header">
+                <h1>AI Drug Discovery</h1>
+                <p class="subtitle">Discover new drug candidates</p>
+            </div>
+            <div class="discovery-options">
+                <div class="option-card"><span class="material-icons-outlined">search</span>
+                    <h3>Target-Based</h3>
+                    <p>Find compounds for protein targets</p><button class="primary-btn">Start</button>
+                </div>
+                <div class="option-card"><span class="material-icons-outlined">compare_arrows</span>
+                    <h3>Similarity Search</h3>
+                    <p>Find similar molecules</p><button class="primary-btn">Search</button>
+                </div>
+                <div class="option-card"><span class="material-icons-outlined">auto_fix_high</span>
+                    <h3>De Novo Design</h3>
+                    <p>Generate novel molecules</p><button class="primary-btn">Generate</button>
+                </div>
+            </div>
+            <div class="model-upload">
+                <h3>Your AI Model</h3>
+                <p>Upload Python/C++ model for integration</p>
+                <div class="upload-zone" id="modelUpload"><span class="material-icons-outlined">cloud_upload</span>
+                    <p>Drag & drop model files</p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="content-section">
+            <div class="section-header">
+                <h1>Research Projects</h1><button class="primary-btn"><span
+                        class="material-icons-outlined">add</span>New Project</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" style="--accent:linear-gradient(135deg,#667eea,#764ba2)">
+                    <h3>Alzheimer's Treatment</h3>
+                    <p>Phase 2 Clinical Trial</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:65%"></div>
+                    </div><span>65%</span>
+                </div>
+                <div class="project-card" style="--accent:linear-gradient(135deg,#f093fb,#f5576c)">
+                    <h3>Cancer Immunotherapy</h3>
+                    <p>Molecule Screening</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:42%"></div>
+                    </div><span>42%</span>
+                </div>
+                <div class="project-card" style="--accent:linear-gradient(135deg,#4facfe,#00f2fe)">
+                    <h3>Antiviral Compound</h3>
+                    <p>AI Prediction Phase</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:88%"></div>
+                    </div><span>88%</span>
+                </div>
+            </div>
+        </section>
+        <section id="trials" class="content-section">
+            <div class="section-header">
+                <h1>Clinical Trials</h1>
+            </div>
+            <table class="trials-table">
+                <thead>
+                    <tr>
+                        <th>Trial ID</th>
+                        <th>Drug</th>
+                        <th>Phase</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CT-2024-001</td>
+                        <td>MG-4721</td>
+                        <td>Phase 3</td>
+                        <td><span class="status active">Active</span></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:78%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CT-2024-002</td>
+                        <td>DC-892</td>
+                        <td>Phase 2</td>
+                        <td><span class="status active">Active</span></td>
+                        <td>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:45%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
